@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "374589894096",
+    "project_id": "visafe-ab657",
+    "storage_bucket": "visafe-ab657.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374589894096:android:bb5ebd4c2b76a5a54eddd5",
+        "android_client_info": {
+          "package_name": "com.vn.drent.customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374589894096-2f79b0e0omgsilp7fmkal4c3acubqb8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARqmhTPDFJlEB6HzvQjNjrejw03lbkb5E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374589894096-2f79b0e0omgsilp7fmkal4c3acubqb8i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374589894096:android:37d701b114541ed94eddd5",
+        "android_client_info": {
+          "package_name": "com.vn.base_mvvm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374589894096-2f79b0e0omgsilp7fmkal4c3acubqb8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARqmhTPDFJlEB6HzvQjNjrejw03lbkb5E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374589894096-2f79b0e0omgsilp7fmkal4c3acubqb8i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

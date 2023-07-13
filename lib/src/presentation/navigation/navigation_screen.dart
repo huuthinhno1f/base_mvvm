@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:upgrader/upgrader.dart';
+
 import '../presentation.dart';
-import 'package:get/get.dart';
 
 class NavigationScreen extends StatefulWidget {
   const NavigationScreen({Key? key}) : super(key: key);
 
   @override
-  _NavigationScreenState createState() => _NavigationScreenState();
+  State<NavigationScreen> createState() => _NavigationScreenState();
 }
 
-class _NavigationScreenState extends State<NavigationScreen> with ResponsiveWidget {
+class _NavigationScreenState extends State<NavigationScreen> {
   late NavigationViewModel _viewModel;
 
   @override
@@ -19,49 +20,20 @@ class _NavigationScreenState extends State<NavigationScreen> with ResponsiveWidg
         onViewModelReady: (viewModel) {
           _viewModel = viewModel..init();
         },
-        childMobile: _buildMobileAppbar(context),
-        builder: (context, viewModel, appbar) {
+        // child: WidgetBackground(),
+        builder: (context, viewModel, child) {
           return Scaffold(
-            body: Column(
-              children: [appbar ?? const SizedBox(), Expanded(child: Center(child: buildUi(context)))],
-            ),
+            body: UpgradeAlert(
+                upgrader: Upgrader(
+                    durationUntilAlertAgain: const Duration(days: 1),
+                    shouldPopScope: () => true,
+                    canDismissDialog: true),
+                child: _buildBody()),
           );
-        },
-        child: _buildAppbar(context));
+        });
   }
 
-  @override
-  Widget buildDesktop(BuildContext context) {
-    return const Text("NavigationScreen Desktop");
-  }
-
-  @override
-  Widget buildMobile(BuildContext context) {
-    return const Text("NavigationScreen Mobile");
-  }
-
-  @override
-  Widget buildTablet(BuildContext context) {
-    return const Text("NavigationScreen Tablet");
-  }
-
-  Widget _buildMobileAppbar(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: Center(
-        child: Text(
-          'app_name'.tr,
-        ),
-      ),
-    );
-  }
-
-  Widget _buildAppbar(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: Center(
-        child: Text('app_name'.tr),
-      ),
-    );
+  Widget _buildBody() {
+    return SizedBox();
   }
 }

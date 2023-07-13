@@ -37,7 +37,6 @@ dependencies:
   firebase_auth: ^4.2.4
 
   #Other
-  flutter_widget_from_html: ^0.8.5
   flutter_staggered_animations: ^1.0.0
   shimmer: ^2.0.0
   flutter_slidable: ^2.0.0
@@ -46,16 +45,8 @@ dependencies:
   flutter_spinkit: ^5.1.0
   keyboard_dismisser: ^3.0.0
   upgrader: ^6.2.0
-  custom_timer: ^0.1.1
-  animations: ^2.0.7
   flutter_keyboard_visibility: ^5.2.0
-  pin_code_fields: ^7.4.0
   flutter_animated_dialog: ^2.0.1
-  smooth_page_indicator: ^1.0.0+2
-  flutter_map: ^3.1.0
-  flutter_datetime_picker: ^1.5.1
-  image_picker: ^0.8.7+4
-  image_cropper: ^1.5.1
   flutter_launcher_icons: ^0.9.3
 
 dev_dependencies:

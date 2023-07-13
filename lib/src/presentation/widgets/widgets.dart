@@ -1,5 +1,4 @@
 export 'dialog/widget_dialog_confirm.dart';
-export 'dialog/widget_picker_image.dart';
 export 'widget_animation_staggered_item.dart';
 export 'widget_appbar.dart';
 export 'widget_image_network.dart';

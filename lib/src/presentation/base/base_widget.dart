@@ -7,11 +7,6 @@ import 'package:responsive_builder/responsive_builder.dart';
 import '../presentation.dart';
 
 class BaseWidget<T extends BaseViewModel> extends StatefulWidget {
-  /*
-    child, childDesktop, childMobile, childTablet:
-    Its widget not listen on consumer
-    Use to paint to widget not change(Appbar, background....)
-   */
   final Widget? child;
   final Widget? childDesktop;
   final Widget? childMobile;

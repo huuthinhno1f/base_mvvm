@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class AppValues {
-  static const String APP_NAME = "EROS_PALACE";
+  static const String appName = "EROS_PALACE";
 
   static const double defaultPadding = 15;
   static const double heightFlatButton = 45;
@@ -12,8 +12,6 @@ class AppValues {
 
   static late double scaleWidth;
   static late double scaleHeight;
-
-  // static List<OnBoardingModel> listOnBoarding = [];
 
   void init() {
     DeviceScreenType deviceScreenType = SizingInformation(

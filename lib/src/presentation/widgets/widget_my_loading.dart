@@ -16,7 +16,7 @@ class MyLoading extends StatelessWidget {
         color: Colors.transparent,
         child: opacity
             ? Center(
-                child: SpinKitCircle(color: color ?? PRIMARY, size: size ?? 50 * AppValues.scale))
+                child: SpinKitCircle(color: color ?? primary, size: size ?? 50 * AppValues.scale))
             : SizedBox(height: 50 * AppValues.scale, width: 50 * AppValues.scale));
   }
 }

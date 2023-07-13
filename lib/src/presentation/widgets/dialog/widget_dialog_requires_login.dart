@@ -30,7 +30,7 @@ class WidgetDialogRequiresLogin extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 36 * AppValues.scale),
                     child: Text('confirm_sign_in'.tr,
-                        style: styleSmall.copyWith(color: GREY_03), textAlign: TextAlign.center),
+                        style: styleSmall.copyWith(color: grey_03), textAlign: TextAlign.center),
                   )
                 ],
               ),
@@ -59,7 +59,7 @@ class WidgetDialogRequiresLogin extends StatelessWidget {
           child: Center(
             child: Text(title,
                 style: styleMediumBold.copyWith(
-                  color: onTap != null ? BLUE : GREY_03,
+                  color: onTap != null ? blue : grey_03,
                 )),
           ),
         ),

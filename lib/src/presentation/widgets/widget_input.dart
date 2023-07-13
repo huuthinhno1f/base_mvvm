@@ -71,7 +71,7 @@ class WidgetInput extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _WidgetInputState createState() => _WidgetInputState();
+  State<WidgetInput> createState() => _WidgetInputState();
 }
 
 class _WidgetInputState extends State<WidgetInput> {
@@ -112,10 +112,10 @@ class _WidgetInputState extends State<WidgetInput> {
                           horizontal: 10 * AppValues.scale, vertical: 13 * AppValues.scale)
                       .copyWith(right: widget.showEye ? 60 * AppValues.scale : 0),
               hintText: widget.hintText ?? "",
-              hintStyle: (widget.hintStyle ?? defaultStyle.copyWith(color: GREY_02)),
+              hintStyle: (widget.hintStyle ?? defaultStyle.copyWith(color: grey_02)),
               counterText: '',
               labelText: widget.labelText,
-              labelStyle: styleMedium.copyWith(color: GREY_04),
+              labelStyle: styleMedium.copyWith(color: grey_04),
               floatingLabelBehavior: FloatingLabelBehavior.always,
               border: _border(),
               focusedBorder: _border(),
@@ -154,7 +154,7 @@ class _WidgetInputState extends State<WidgetInput> {
 
   OutlineInputBorder _border() {
     return OutlineInputBorder(
-        borderSide: BorderSide(color: widget.borderColor ?? GREY_LIGHT),
+        borderSide: BorderSide(color: widget.borderColor ?? grey_01),
         borderRadius:
             widget.borderRadius ?? BorderRadius.circular(widget.radius ?? 99 * AppValues.scale));
   }

@@ -52,11 +52,11 @@ class WidgetPickerImage extends StatelessWidget {
                 Text('Thêm hình ảnh'.tr, style: styleMedium),
                 GestureDetector(
                     onTap: () => Get.back(),
-                    child: Icon(Icons.clear, color: GREY_03, size: 18 * AppValues.scale))
+                    child: Icon(Icons.clear, color: grey_03, size: 18 * AppValues.scale))
               ],
             ),
           ),
-          const Divider(height: 1, color: GREY_06, thickness: 0),
+          const Divider(height: 1, color: grey_06, thickness: 0),
           SizedBox(height: 24 * AppValues.scale),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -73,7 +73,7 @@ class WidgetPickerImage extends StatelessWidget {
                       bottom: 20 * AppValues.scale,
                       child: Text(
                         'Chụp ảnh'.tr,
-                        style: styleSmall.copyWith(fontSize: 12 * AppValues.scale, color: GREY_02),
+                        style: styleSmall.copyWith(fontSize: 12 * AppValues.scale, color: grey_02),
                         textAlign: TextAlign.center,
                       ),
                     )
@@ -93,7 +93,7 @@ class WidgetPickerImage extends StatelessWidget {
                       bottom: 20 * AppValues.scale,
                       child: Text(
                         'Thư viện'.tr,
-                        style: styleSmall.copyWith(fontSize: 12 * AppValues.scale, color: GREY_02),
+                        style: styleSmall.copyWith(fontSize: 12 * AppValues.scale, color: grey_02),
                         textAlign: TextAlign.center,
                       ),
                     )

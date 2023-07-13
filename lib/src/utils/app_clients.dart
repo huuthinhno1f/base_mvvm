@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:dio/native_imp.dart';
 import 'package:logger/logger.dart';
+
 import '../configs/configs.dart';
 import 'app_prefs.dart';
 
@@ -13,19 +14,19 @@ class AppClients extends DioForNative {
   static AppClients? _instance;
   static Logger logger = Logger();
 
-  factory AppClients({String baseUrl = AppEndpoint.BASE_URL, BaseOptions? options}) {
+  factory AppClients({String baseUrl = AppEndpoint.baseUrl, BaseOptions? options}) {
     _instance ??= AppClients._(baseUrl: baseUrl);
     if (options != null) _instance!.options = options;
     _instance!.options.baseUrl = baseUrl;
     return _instance!;
   }
 
-  AppClients._({String baseUrl = AppEndpoint.BASE_URL, BaseOptions? options}) : super(options) {
+  AppClients._({String baseUrl = AppEndpoint.baseUrl, BaseOptions? options}) : super(options) {
     interceptors.add(InterceptorsWrapper(
-          onRequest: _requestInterceptor,
-          onResponse: _responseInterceptor,
-          onError: _errorInterceptor,
-        ));
+      onRequest: _requestInterceptor,
+      onResponse: _responseInterceptor,
+      onError: _errorInterceptor,
+    ));
     this.options.baseUrl = baseUrl;
   }
 

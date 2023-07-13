@@ -35,7 +35,7 @@ class _LoadingWidget extends StatelessWidget {
         alignment: Alignment.center,
         child: const Center(
             child: SpinKitCircle(
-          color: BRAND_01,
+          color: brand_01,
           size: 55,
         )));
   }

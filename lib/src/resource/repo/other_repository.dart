@@ -1,4 +1,3 @@
-import 'package:base_mvvm/src/resource/model/verify_model.dart';
 import 'package:dio/dio.dart';
 
 import '../../configs/configs.dart';
@@ -21,10 +20,10 @@ class OtherRepository {
     try {
       Response response = await AppClients().get(AppEndpoint.DEFAULT);
       return NetworkState(
-        status: AppEndpoint.SUCCESS,
+        status: AppEndpoint.success,
         data: VerifyModel.fromJson(response.data),
       );
-    } on DioError catch (e) {
+    } catch (e) {
       return NetworkState.withError(e);
     }
   }

@@ -40,12 +40,12 @@ class WidgetDialogConfirm extends StatelessWidget {
                   Text(title, style: styleLargeBold),
                   InkWell(
                       onTap: () => Get.back(),
-                      child: Icon(Icons.clear, size: 24 * AppValues.scale, color: GREY_04))
+                      child: Icon(Icons.clear, size: 24 * AppValues.scale, color: grey_04))
                 ],
               ),
               SizedBox(height: 8 * AppValues.scale),
               Text(content,
-                  style: styleSmall.copyWith(color: GREY_04, fontSize: 13),
+                  style: styleSmall.copyWith(color: grey_04, fontSize: 13),
                   textAlign: TextAlign.center),
               SizedBox(height: 24 * AppValues.scale),
               reversalButton
@@ -58,7 +58,7 @@ class WidgetDialogConfirm extends StatelessWidget {
                             onTap: onTapConfirm,
                             color: Colors.white,
                             borderColor: Colors.white,
-                            colorText: PRIMARY,
+                            colorText: primary,
                           ),
                         ),
                         SizedBox(width: 10 * AppValues.scale),
@@ -80,7 +80,7 @@ class WidgetDialogConfirm extends StatelessWidget {
                             onTap: onTapCancel ?? () => Get.back(),
                             color: Colors.white,
                             borderColor: Colors.white,
-                            colorText: PRIMARY,
+                            colorText: primary,
                           ),
                         ),
                         SizedBox(width: 10 * AppValues.scale),

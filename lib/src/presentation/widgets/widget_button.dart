@@ -5,7 +5,8 @@ import '../../configs/configs.dart';
 
 class WidgetButton extends StatelessWidget {
   const WidgetButton(
-      {Key? key, required this.text,
+      {Key? key,
+      required this.text,
       this.color,
       this.borderColor,
       this.styles,
@@ -13,7 +14,8 @@ class WidgetButton extends StatelessWidget {
       this.colorText,
       this.padding,
       this.iconHeader,
-      this.radius}) : super(key: key);
+      this.radius})
+      : super(key: key);
 
   final String text;
   final Color? color;
@@ -32,8 +34,8 @@ class WidgetButton extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.symmetric(vertical: padding ?? 16 * AppValues.scale),
         decoration: BoxDecoration(
-            color: color ?? PRIMARY,
-            border: Border.all(color: borderColor ?? PRIMARY),
+            color: color ?? primary,
+            border: Border.all(color: borderColor ?? primary),
             borderRadius: BorderRadius.circular(radius ?? 99)),
         child: Center(
           child: Row(

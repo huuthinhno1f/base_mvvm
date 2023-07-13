@@ -58,7 +58,7 @@ class AppUtils {
 
   static String pathMediaToUrl(String? url) {
     if (url == null || url.startsWith('http')) return url ?? '';
-    return '${AppEndpoint.BASE_IMAGE_URL}$url';
+    return '${AppEndpoint.baseImageUrl}$url';
   }
 
   static String convertDateTime2String(DateTime? dateTime, {String format = 'yy-MM-dd'}) {

@@ -74,7 +74,7 @@ class WidgetLoadMoreWrapVerticalState<T> extends State<WidgetLoadMoreWrapVertica
         : (this._dataList!.isNotEmpty
             ? RefreshIndicator(
                 backgroundColor: Colors.white,
-                color: widget.loadingColor ?? PRIMARY,
+                color: widget.loadingColor ?? primary,
                 onRefresh: this.onRefresh,
                 child: SingleChildScrollView(
                   physics: widget.physics,
@@ -89,7 +89,7 @@ class WidgetLoadMoreWrapVerticalState<T> extends State<WidgetLoadMoreWrapVertica
               )
             : RefreshIndicator(
                 backgroundColor: Colors.white,
-                color: widget.loadingColor ?? PRIMARY,
+                color: widget.loadingColor ?? primary,
                 onRefresh: this.onRefresh,
                 child: Stack(
                   children: [

@@ -43,7 +43,7 @@ class CustomToast extends StatelessWidget {
   Color getColor() {
     switch (type) {
       case CustomToastType.neutral:
-        return GREY_05;
+        return grey_05;
       case CustomToastType.information:
         return const Color(0xFF1697F4);
       case CustomToastType.success:

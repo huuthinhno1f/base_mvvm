@@ -32,14 +32,14 @@ class WidgetAppbar extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(16 * AppValues.scale)
             .copyWith(top: 16 * AppValues.scale + Get.mediaQuery.viewPadding.top),
-        color: bgColor ?? PRIMARY,
+        color: bgColor ?? primary,
         child: Row(
           children: [
             leading ??
                 InkWell(
                   onTap: onTapIconBack ?? () => Get.back(),
                   child: Container(
-                    color: PRIMARY,
+                    color: primary,
                     width: 24 * AppValues.scale,
                     height: 24 * AppValues.scale,
                     child: Icon(

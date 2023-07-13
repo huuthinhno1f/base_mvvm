@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
+
 import '../../configs/configs.dart';
 
 class NetworkState<T> {
@@ -33,8 +34,7 @@ class NetworkState<T> {
         data = converter != null && json[prefix] != null ? converter(json[prefix]) : json[prefix];
       }
     } else {
-      data =
-      converter != null && json["data"] != null ? converter(json["data"]) : json["data"];
+      data = converter != null && json["data"] != null ? converter(json["data"]) : json["data"];
     }
   }
 
@@ -52,25 +52,36 @@ class NetworkState<T> {
     return data;
   }
 
-  NetworkState.withError(DioError error) {
+  NetworkState.withError(error) {
     String message;
-    int? code;
-    Response? response = error.response;
-    if (response != null) {
-      code = response.statusCode;
-      message = response.data["message"];
+    int code;
+    Response? response;
+    if (error is DioError) {
+      response = error.response;
+      try {
+        if (response != null) {
+          code = response.statusCode!;
+          message = response.data["message"];
+        } else {
+          code = AppEndpoint.errorSever;
+          message = "Không thể kết nối đến máy chủ!";
+        }
+      } catch (e) {
+        code = AppEndpoint.errorSever;
+        message = "Không thể kết nối đến máy chủ!";
+      }
     } else {
-      code = AppEndpoint.ERROR_SERVER;
+      code = AppEndpoint.errorSever;
       message = "Không thể kết nối đến máy chủ!";
     }
     this.message = message;
     this.status = code;
-    this.data = null;
+    this.data = response?.data["errors"];
   }
 
   NetworkState.withDisconnect() {
     this.message = "Mất kết nối internet, vui lòng kiểm tra wifi/3g và thử lại!";
-    this.status = AppEndpoint.ERROR_DISCONNECT;
+    this.status = AppEndpoint.errorDisconnect;
     this.data = null;
   }
 
@@ -78,7 +89,7 @@ class NetworkState<T> {
     this.data = null;
   }
 
-  bool get isSuccess => status == AppEndpoint.SUCCESS;
+  bool get isSuccess => status == AppEndpoint.success;
 
-  bool get isError => status != AppEndpoint.SUCCESS;
+  bool get isError => status != AppEndpoint.success;
 }

@@ -54,7 +54,7 @@ class FirebaseRepository {
       String? token = await FirebaseMessaging.instance.getToken();
       Response response = await AppClients().post("URL", data: {"fcm_device_token": token});
       return NetworkState(
-        status: response.statusCode ?? AppEndpoint.SUCCESS,
+        status: response.statusCode ?? AppEndpoint.success,
         data: response.data,
       );
     } on DioError catch (e) {

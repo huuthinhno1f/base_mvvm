@@ -5,7 +5,7 @@ import 'constants.dart';
 
 normalTheme(BuildContext context) {
   return ThemeData(
-    fontFamily: FONT_FAMILY_ROBOTO,
+    fontFamily: fontFamilyRoboto,
     brightness: AppUtils.valueByMode(values: [Brightness.dark, Brightness.light]),
     inputDecorationTheme: const InputDecorationTheme(
       border: InputBorder.none,

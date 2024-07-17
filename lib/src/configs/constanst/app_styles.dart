@@ -2,86 +2,86 @@ import 'package:flutter/material.dart';
 
 import '../configs.dart';
 
-const String FONT_FAMILY_ROBOTO = 'Roboto';
+const String fontFamilyRoboto = 'Roboto';
 
-const FONT_SIZE_VERY_SMALL = 12.0;
-const FONT_SIZE_SMALL = 14.0;
-const FONT_SIZE_MEDIUM = 16.0;
-const FONT_SIZE_LARGE = 18.0;
-const FONT_SIZE_VERY_LARGE = 22.0;
+const fontSizeVerySmall = 12.0;
+const fontSizeSmall = 14.0;
+const fontSizeMedium = 16.0;
+const fontSizeLarge = 18.0;
+const fontSizeVeryLarge = 22.0;
 
-const TEXT_HEIGHT = 1.2;
+const textHeight = 1.2;
 
 TextStyle styleVerySmall = const TextStyle(
-  fontSize: FONT_SIZE_VERY_SMALL,
-  height: TEXT_HEIGHT,
+  fontSize: fontSizeVerySmall,
+  height: textHeight,
   color: grey_02,
-  fontFamily: FONT_FAMILY_ROBOTO,
+  fontFamily: fontFamilyRoboto,
 );
 
 TextStyle styleVerySmallBold = const TextStyle(
-  fontSize: FONT_SIZE_VERY_SMALL,
-  height: TEXT_HEIGHT,
+  fontSize: fontSizeVerySmall,
+  height: textHeight,
   color: grey_02,
-  fontFamily: FONT_FAMILY_ROBOTO,
+  fontFamily: fontFamilyRoboto,
   fontWeight: FontWeight.bold,
 );
 
 TextStyle styleSmall = const TextStyle(
-  fontSize: FONT_SIZE_SMALL,
-  height: TEXT_HEIGHT,
+  fontSize: fontSizeSmall,
+  height: textHeight,
   color: grey_02,
-  fontFamily: FONT_FAMILY_ROBOTO,
+  fontFamily: fontFamilyRoboto,
 );
 
 TextStyle styleSmallBold = const TextStyle(
-  fontSize: FONT_SIZE_SMALL,
-  height: TEXT_HEIGHT,
-  fontFamily: FONT_FAMILY_ROBOTO,
+  fontSize: fontSizeSmall,
+  height: textHeight,
+  fontFamily: fontFamilyRoboto,
   color: grey_02,
   fontWeight: FontWeight.bold,
 );
 
 TextStyle styleMedium = const TextStyle(
-  fontSize: FONT_SIZE_MEDIUM,
-  height: TEXT_HEIGHT,
+  fontSize: fontSizeMedium,
+  height: textHeight,
   color: grey_02,
-  fontFamily: FONT_FAMILY_ROBOTO,
+  fontFamily: fontFamilyRoboto,
 );
 
 TextStyle styleMediumBold = const TextStyle(
-  fontSize: FONT_SIZE_MEDIUM,
-  height: TEXT_HEIGHT,
+  fontSize: fontSizeMedium,
+  height: textHeight,
   color: grey_02,
-  fontFamily: FONT_FAMILY_ROBOTO,
+  fontFamily: fontFamilyRoboto,
   fontWeight: FontWeight.bold,
 );
 
 TextStyle styleLarge = const TextStyle(
-  fontSize: FONT_SIZE_LARGE,
-  height: TEXT_HEIGHT,
+  fontSize: fontSizeLarge,
+  height: textHeight,
   color: grey_02,
-  fontFamily: FONT_FAMILY_ROBOTO,
+  fontFamily: fontFamilyRoboto,
 );
 
 TextStyle styleLargeBold = const TextStyle(
-  fontSize: FONT_SIZE_LARGE,
-  height: TEXT_HEIGHT,
+  fontSize: fontSizeLarge,
+  height: textHeight,
   color: grey_02,
-  fontFamily: FONT_FAMILY_ROBOTO,
+  fontFamily: fontFamilyRoboto,
   fontWeight: FontWeight.bold,
 );
 
 TextStyle styleVeryLarge = const TextStyle(
-  fontSize: FONT_SIZE_VERY_LARGE,
-  height: TEXT_HEIGHT,
+  fontSize: fontSizeVeryLarge,
+  height: textHeight,
   color: grey_02,
-  fontFamily: FONT_FAMILY_ROBOTO,
+  fontFamily: fontFamilyRoboto,
 );
 
 TextStyle styleVeryLargeBold = const TextStyle(
-    fontSize: FONT_SIZE_VERY_LARGE,
-    height: TEXT_HEIGHT,
+    fontSize: fontSizeVeryLarge,
+    height: textHeight,
     color: grey_02,
-    fontFamily: FONT_FAMILY_ROBOTO,
+    fontFamily: fontFamilyRoboto,
     fontWeight: FontWeight.bold);

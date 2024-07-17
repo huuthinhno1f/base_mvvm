@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 class FirebaseNotification {
   Notification? notification;
   Data? data;
@@ -32,15 +34,24 @@ class FirebaseNotification {
 }
 
 class Data {
-  Data();
+  final String? id;
+  final String? type;
 
-  factory Data.fromJson(Map<String, dynamic>? json) => Data();
+  Data({this.id, this.type});
 
-  Map<String, dynamic> toJson() => <String, dynamic>{};
+  factory Data.fromJson(Map<String, dynamic> json) => Data(
+        id: json["id"],
+        type: json["type"],
+      );
+
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        "id": id,
+        "type": type,
+      };
 
   @override
   String toString() {
-    return '''{}''';
+    return jsonEncode(this);
   }
 }
 
@@ -65,6 +76,6 @@ class Notification {
 
   @override
   String toString() {
-    return 'Notification{title: $title, body: $body}';
+    return '{}';
   }
 }

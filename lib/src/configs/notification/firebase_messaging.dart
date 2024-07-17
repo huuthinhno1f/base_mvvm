@@ -1,14 +1,10 @@
 import 'dart:developer';
 import 'dart:io';
+
 import 'package:firebase_messaging/firebase_messaging.dart';
 
-import 'notification.dart';
-
-//This method will be call in background where have a new message
-Future<void> backgroundMessageHandler(RemoteMessage message) async {
-  //Do not thing...
-  // return FirebaseCloudMessaging._handler(message);
-}
+import 'local_notification.dart';
+import 'notification_data.dart';
 
 class FirebaseCloudMessaging {
   static final FirebaseMessaging instance = FirebaseMessaging.instance;
@@ -19,25 +15,25 @@ class FirebaseCloudMessaging {
     }
     FirebaseMessaging.onMessage.listen((message) {
       log("OnMessage: ${message.data}");
-      _handler(message, show: true);
+      Platform.isAndroid ? _handler(message) : null;
     });
     FirebaseMessaging.onMessageOpenedApp.listen((message) {
       log("OnMessageOpenedApp: ${message.data}");
-      _handler(message, show: true);
+      Data payloadData = Data.fromJson(message.data);
+      onClickNotification(payloadData);
     });
-    FirebaseMessaging.onBackgroundMessage(backgroundMessageHandler);
-    final initMessage = await FirebaseMessaging.instance.getInitialMessage();
-    if (initMessage != null) _handler(initMessage);
+    // FirebaseMessaging.onBackgroundMessage(backgroundMessageHandler);
+    // final initMessage = await FirebaseMessaging.instance.getInitialMessage();
+    // if (initMessage != null) _handler(initMessage);
   }
 
-  static _handler(RemoteMessage message, {bool show = false}) {
-    Data payload = Data.fromJson(message.data);
-    if (show) {
-      LocalNotification.showNotification(message.notification?.title,
-          message.notification?.body, payload.toString());
-      notificationSubject.add(true);
-    } else {
-      selectNotificationSubject.add(payload.toString());
+  static _handler(RemoteMessage message) {
+    if (message.notification != null) {
+      Data payload = Data.fromJson(message.data);
+      LocalNotification.showNotification(
+          message.notification?.title, message.notification?.body, payload.toString());
     }
   }
+
+  static onClickNotification(Data data) async {}
 }

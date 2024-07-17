@@ -1,4 +1,3 @@
-
 final Map<String, String> enUs = {
-  'oi' : 'Hello',
+  'oi': 'Hello',
 };

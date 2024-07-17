@@ -1,6 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
-import 'notification.dart';
+import 'notification_data.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
@@ -12,50 +14,50 @@ class LocalNotification {
   static const String _description = '_Description';
 
   static setup() async {
-    //setup local notification
     notificationAppLaunchDetails =
         await flutterLocalNotificationsPlugin.getNotificationAppLaunchDetails();
-
     var initializationSettingsAndroid = const AndroidInitializationSettings('ic_launcher');
-    // Note: permissions aren't requested here just to demonstrate that can be done later using the `requestPermissions()` method
-    // of the `IOSFlutterLocalNotificationsPlugin` class
     var initializationSettingsIOS = DarwinInitializationSettings(
         requestAlertPermission: true,
         requestBadgePermission: true,
         requestSoundPermission: true,
         onDidReceiveLocalNotification:
             (int id, String? title, String? body, String? payload) async {
-          selectNotificationSubject.add(payload);
           flutterLocalNotificationsPlugin.cancel(id);
         });
     var initializationSettings = InitializationSettings(
         android: initializationSettingsAndroid, iOS: initializationSettingsIOS);
     await flutterLocalNotificationsPlugin.initialize(initializationSettings,
         onDidReceiveNotificationResponse: (NotificationResponse notificationResponse) {
+      Data payloadData = Data.fromJson(jsonDecode(notificationResponse.payload!));
       switch (notificationResponse.notificationResponseType) {
         case NotificationResponseType.selectedNotification:
-          selectNotificationSubject.add(notificationResponse.payload);
-          break;
         case NotificationResponseType.selectedNotificationAction:
-          if (notificationResponse.actionId == 'id_3') {
-            selectNotificationSubject.add(notificationResponse.payload);
-          }
+          onClickNotification(payloadData);
           break;
       }
     });
   }
 
   static Future<void> showNotification(String? title, String? body, String? payload) async {
-    var androidPlatformChannelSpecifics = const AndroidNotificationDetails(_id, _channel,
+    const androidPlatformChannelSpecifics = AndroidNotificationDetails(_id, _channel,
         channelDescription: _description,
         importance: Importance.max,
         priority: Priority.high,
-        ticker: 'ticker');
-    var iOSPlatformChannelSpecifics = const DarwinNotificationDetails();
-    var platformChannelSpecifics = NotificationDetails(
+        playSound: true,
+        ticker: 'ticker',
+        icon: 'ic_launcher');
+    const iOSPlatformChannelSpecifics = DarwinNotificationDetails(
+        presentSound: true,
+        presentBadge: true,
+        presentAlert: true);
+    const platformChannelSpecifics = NotificationDetails(
         android: androidPlatformChannelSpecifics, iOS: iOSPlatformChannelSpecifics);
-    await flutterLocalNotificationsPlugin.show(
-        0, '${title ?? 'Say hi!'} ', body ?? 'Nice to meet you again!', platformChannelSpecifics,
+    int notificationId = DateTime.now().millisecondsSinceEpoch.remainder(2147483647);
+    await flutterLocalNotificationsPlugin.show(notificationId, title ?? 'Say hi!',
+        body ?? 'Nice to meet you again!', platformChannelSpecifics,
         payload: payload);
   }
+
+  static onClickNotification(Data data) async {}
 }

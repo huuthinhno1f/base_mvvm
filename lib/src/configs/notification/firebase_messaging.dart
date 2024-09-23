@@ -22,9 +22,6 @@ class FirebaseCloudMessaging {
       Data payloadData = Data.fromJson(message.data);
       onClickNotification(payloadData);
     });
-    // FirebaseMessaging.onBackgroundMessage(backgroundMessageHandler);
-    // final initMessage = await FirebaseMessaging.instance.getInitialMessage();
-    // if (initMessage != null) _handler(initMessage);
   }
 
   static _handler(RemoteMessage message) {

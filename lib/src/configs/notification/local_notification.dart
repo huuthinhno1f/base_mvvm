@@ -18,9 +18,6 @@ class LocalNotification {
         await flutterLocalNotificationsPlugin.getNotificationAppLaunchDetails();
     var initializationSettingsAndroid = const AndroidInitializationSettings('ic_launcher');
     var initializationSettingsIOS = DarwinInitializationSettings(
-        requestAlertPermission: true,
-        requestBadgePermission: true,
-        requestSoundPermission: true,
         onDidReceiveLocalNotification:
             (int id, String? title, String? body, String? payload) async {
           flutterLocalNotificationsPlugin.cancel(id);

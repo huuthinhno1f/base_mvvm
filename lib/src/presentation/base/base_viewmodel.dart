@@ -62,4 +62,13 @@ abstract class BaseViewModel extends ChangeNotifier {
       barrierColor: Colors.black54,
     );
   }
+  Future<void> setLoadingDialog(bool loading) async {
+    if (loading) {
+      Get.dialog(const Center(child: MyLoading()), barrierDismissible: false);
+    } else {
+      if (Get.isDialogOpen != null && Get.isDialogOpen!) {
+        Get.back();
+      }
+    }
+  }
 }

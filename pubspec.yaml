@@ -36,9 +36,12 @@ dependencies:
   firebase_core: ^2.11.0
   firebase_auth: ^4.2.4
 
-  #Other
+  #Animated
   flutter_staggered_animations: ^1.0.0
+  confetti: ^0.7.0
   shimmer: ^2.0.0
+
+  #Other
   flutter_slidable: ^2.0.0
   device_info: ^2.0.3
   equatable: ^2.0.3

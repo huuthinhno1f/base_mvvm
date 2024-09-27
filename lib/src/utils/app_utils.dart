@@ -16,7 +16,7 @@ class AppUtils {
   static void toast(String? message,
       {Duration? duration,
       NotificationPosition? notificationPosition,
-      CustomToastType type = CustomToastType.information}) {
+      CustomToastType type = CustomToastType.error}) {
     if (message == null) return;
     showOverlayNotification(
       (context) {

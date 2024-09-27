@@ -8,3 +8,5 @@ export 'widget_load_more_wrap_vertical.dart';
 export 'widget_loading_full_screen.dart';
 export 'widget_my_loading.dart';
 export 'widget_restart.dart';
+export 'widget_confetti.dart';
+export 'widget_animation_slide_transition.dart';

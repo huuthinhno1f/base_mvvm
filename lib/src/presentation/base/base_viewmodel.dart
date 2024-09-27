@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:rxdart/rxdart.dart';
 
-import '../../resource/repo/repo.dart';
+import '../../resource/resource.dart';
 import '../presentation.dart';
 
 abstract class BaseViewModel extends ChangeNotifier {
